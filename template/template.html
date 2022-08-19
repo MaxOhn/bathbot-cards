@@ -10,41 +10,46 @@
         rel="stylesheet">
 </head>
 
-<body class="mode_taiko">
+<body class="{gamemode}">
     <div class="header">
         <div class="header__texts">
-            <h2>Title</h2>
+            <h2>{title}</h2>
             <div class="header__username">
-                <h1>chromb</h1> <img src="https://osu.ppy.sh/assets/images/flags/1f1ec-1f1e7.svg">
+                <h1>{username}</h1> <img src="{flag}">
             </div>
         </div>
         <div class="header__gamemode">
-            <img src="../img/gamemodes/Taiko.svg">
+            <img src="{gamemode_icon}">
         </div>
     </div>
     <div class="main">
         <div class="main_top">
             <div class="main_top_pfp">
-                <img src="https://chromb.uk/chromb.png">
+                <img src="{user_pfp}">
             </div>
             <div class="main_top_sidebar">
                 <div class="infopanel main_top_sidebar_info-stats">
-                    <div class="infosection">
+                    <!-- 
+                        for {???_enabled}
+                        - on: replace with "shown"
+                        - off: replace with "hidden"
+                    -->
+                    <div class="infosection {accuracy_enabled}">
                         <h3>Accuracy</h3>
                         <h1>
-                            81<light>.83</light>
+                            {accuracy}<light>.{accuracy_decimal}</light>
                         </h1>
                     </div>
-                    <div class="infosection">
+                    <div class="infosection {aim_enabled}">
                         <h3>Aim</h3>
                         <h1>
-                            81<light>.83</light>
+                            {aim}<light>.{aim_decimal}</light>
                         </h1>
                     </div>
-                    <div class="infosection">
+                    <div class="infosection {speed_enabled}">
                         <h3>Speed</h3>
                         <h1>
-                            81<light>.83</light>
+                            {speed}<light>.{speed_decimal}</light>
                         </h1>
                     </div>
                 </div>
@@ -52,13 +57,13 @@
                     <div class="infosection infosection-rank">
                         <h3>Global</h3>
                         <h1>
-                            <light>#</light>9999999
+                            <light>#</light>{global_rank}
                         </h1>
                     </div>
                     <div class="infosection infosection-rank">
                         <h3>Country</h3>
                         <h1>
-                            <light>#</light>9999999
+                            <light>#</light>{country_rank}
                         </h1>
                     </div>
                 </div>
@@ -68,11 +73,11 @@
             <div class="infopanel infopanel-level">
                 <div class="level-inner">
                     <div class="level-text-top">
-                        <p>Level <strong>25</strong></p>
+                        <p>Level <strong>{level}</strong></p>
                     </div>
                     <div class="levelbar">
                         <div class="progressbar">
-                            <div class="progressbar-inner" style="width: 46%;"></div>
+                            <div class="progressbar-inner" style="width: {level_percentage}%;"></div>
                         </div>
                     </div>
                 </div>
@@ -87,13 +92,13 @@
             <img class="footer-left-text" src="../img/branding/text.svg">
         </div>
         <div class="footer-right">
-            <p>2022/08/15</p>
+            <p>{date}</p>
         </div>
     </div>
 </body>
 <style>
     body {
-        --background: url("../img/backgrounds/advanced.png")
+        --background: url("{background_image}")
     }
 </style>
 
