@@ -25,10 +25,9 @@ html {
     height: 1260px;
     max-width: 980px;
     max-height: 1260px;
-    
 }
 
-.card {
+body {
     background-image: var(--background);
     background-position: center;
     background-size: cover;
@@ -40,9 +39,6 @@ html {
     position: relative;
     display: flex;
     flex-direction: column;
-    overflow: hidden !important;
-    border-radius: 32px !important;
-    position: relative;
 }
 
 .footer {
