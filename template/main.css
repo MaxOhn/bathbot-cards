@@ -1,17 +1,56 @@
 .mode_standard {
-    --gamemode-accent: #ff66aa;
+    --gamemode-accent: 255, 102, 170;
 }
 
 .mode_mania {
-    --gamemode-accent: #c566ff;
+    --gamemode-accent: 197, 102, 255;
 }
 
 .mode_taiko {
-    --gamemode-accent: #5ecba2;
+    --gamemode-accent: 94, 203, 162;
 }
 
 .mode_catch {
-    --gamemode-accent: #66ccff;
+    --gamemode-accent: 102, 204, 255;
+}
+
+body {
+    --c95: 93, 89, 249;
+    --c90: 106, 237, 244;
+    --c80: 182, 106, 237;
+    --c60: 250, 89, 111;
+    --c40: 255, 140, 104;
+    --cnone: 161, 190, 206;
+}
+
+.col95club {
+    --maincol: var(--c95) !important;
+    --nextcol: var(--cnone) !important;
+}
+
+.col90club {
+    --maincol: var(--c90) !important;
+    --nextcol: var(--c95) !important;
+}
+
+.col80club {
+    --maincol: var(--c80) !important;
+    --nextcol: var(--c90) !important;
+}
+
+.col60club {
+    --maincol: var(--c60) !important;
+    --nextcol: var(--c80) !important;
+}
+
+.col40club {
+    --maincol: var(--c40) !important;
+    --nextcol: var(--c60) !important;
+}
+
+.colnoclub {
+    --maincol: var(--cnone) !important;
+    --nextcol: var(--c40) !important;
 }
 
 * {
@@ -50,7 +89,7 @@ body {
     align-items: center;
 }
 
-.footer-right {
+.footer__right {
     margin-left: auto;
     margin-right: 48px;
     font-style: italic;
@@ -58,12 +97,12 @@ body {
     font-size: 45px;
 }
 
-.footer-left {
+.footer__left {
     display: flex;
     align-items: center;
 }
 
-.logo_container {
+.footer__logo-container {
     width: 184px;
     height: 184px;
     display: flex;
@@ -74,11 +113,11 @@ body {
     background-position: center;
 }
 
-.logo_container img {
+.footer__logo-container img {
     height: 110px;
 }
 
-.footer-left-text {
+.footer__left-text {
     height: 35px;
     z-index: 4;
     margin-left: 35px;
@@ -129,127 +168,199 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%), var(--gamemode-accent);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%), rgba(var(--gamemode-accent), 0.25);
     border-radius: 0px 0px 0px 32px;
     margin-left: auto;
 }
 
-.main {
-    flex: 1;
+.header__gamemode img {
+    filter: invert(1);
+}
+
+.info {
+    height: 825px;
+    max-height: 825px;
     padding: 53px;
-}
-
-.main_top {
-    display: flex;
-}
-
-.main_top_pfp img {
-    height: 569px;
-    border-radius: 16px;
-    box-shadow: 0px 4px 16px #0002;
-}
-
-.infopanel {
-    background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.3));
-    border-radius: 16px;
-    padding: 16px 31px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    box-shadow: 0px 4px 16px #0001;
-    justify-content: space-around;
 }
 
-.main_top_sidebar_info-stats {
-    flex: 1;
-    justify-items: center;
+.info__upper-left-pfp {
+    width: 445px;
+    max-width: 469px;
+    border-radius: 16px;
+    background-color: rgb(0, 0, 0, 0.2);
 }
 
-.main_top_sidebar {
+.info__upper-left-pfp img {
+    width: 100%;
+    border-radius: 16px;
+}
+
+.info__upper-left-pfp-rank {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
-    flex: 1;
-    padding-left: 25px;
+    padding: 18px 20px;
+    align-items: center;
 }
 
-.infosection h3 {
+.info__upper-left-pfp-rank-country {
+    margin-left: auto;
+    text-align: right;
+}
+
+.info__upper-left-pfp-rank-country h3 {
     font-style: italic;
     font-weight: 300;
-    font-size: 34px;
+    font-size: 25px;
+    margin-bottom: -5px;
 }
 
-.infosection h1 {
-    font-weight: 900;
-    font-size: 45px;
+.info__upper-left-pfp-rank-country h1 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 35px;
 }
 
-.infosection-rank h1 {
+.info__upper-left-pfp-rank-global h3 {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 30px;
+    margin-bottom: -6px;
+}
+
+.info__upper-left-pfp-rank-global h1 {
+    font-style: normal;
     font-weight: 900;
     font-size: 43px;
 }
 
-.infosection h1 light {
-    font-weight: 400;
-    color: #fffa;
+.info__upper {
+    display: flex;
+
 }
 
-.main {
+.info__upper-right {
+    margin-left: 13px;
     display: flex;
     flex-direction: column;
-}
-
-.infopanel-level {
     flex: 1;
 }
 
-.main_bottom {
-    flex: 1;
-    display: flex;
-    padding-top: 25px;
-    flex-direction: column;
-}
-
-.progressbar {
+.info__upper-right-stats {
+    height: 100%;
     width: 100%;
-    background: rgba(255, 255, 255, 0.4);
-    border-radius: 21.5px;
-    height: 7px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.176) 100%);
+    justify-content: space-around;
+    padding: 15px 30px;
+}
+
+.info__upper-right-stat-title {
+    width: 4px;
+    height: 43px;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+}
+
+.info__upper-right-stat-title h3 {
+    font-style: italic;
+    font-weight: 300;
+    font-size: 35px;
+    margin-left: 16px;
+}
+
+.info__upper-right-stat h1 {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 60px;
+}
+
+.info__upper-right-stat h1 light {
+    font-weight: 400;
+}
+
+.info__upper-right-panel-2 {
+    flex: 1;
+    margin-top: 13px;
+    border-radius: 16px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.176) 100%);
+}
+
+.info__lower {
+    border-radius: 16px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.176) 100%);
+    flex: 1;
+    width: 100%;
+    margin-top: 13px;
+    display: flex;
+    flex-direction: column;
+    padding: 27px 32px;
+    justify-content: space-between;
+}
+
+.info__lower-progress {
     display: flex;
     align-items: center;
 }
 
-.progressbar-inner {
-    height: 22px;
-    border-radius: 900px;
-    background-color: white;
+.info__lower-progress-bar {
+    height: 3px;
+    flex: 1;
+    background-color: #fff3;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
 }
 
-.level-text-top p {
+.info__lower-progress-bar-inner {
+    height: 9px;
+    background-color: #fff;
+    border-radius: 9px;
+}
+
+.info__lower-progress h1 {
     font-style: italic;
-    font-weight: 400;
-    font-size: 35px;
+    font-weight: 300;
     color: #fffa;
+    font-size: 35px;
+    margin-right: 13px;
 }
 
-.level-text-top p strong {
-    font-style: normal;
+.info__lower-progress h1 strong {
     font-weight: 800;
     color: #fff;
 }
 
-.level-text-top {
-    margin-top: -5px;
-    margin-bottom: 14px;
+.info__lower-progress h3 {
+    margin-left: 13px;
+    font-size: 30px;
+    font-weight: 500;
 }
 
-.level-inner {
-    margin-top: -6px;
+.info__lower-progress h3 light {
+    font-weight: 400;
+    color: #fffa;
 }
 
-.hidden {
-    display: none;
+.info__lower-progress-medals h1 {
+    color: #fffa;
+    filter: brightness(1.5);
 }
 
-.main_top_sidebar_info-rank {
-    margin-top: 6px;
+.info__lower-progress-medals h1 strong {
+    color: rgb(var(--maincol));
+}
+
+.info__lower-progress-medals .info__lower-progress-bar-inner {
+    background-color: rgb(var(--maincol));
+    box-shadow: 0px 0px 20px rgb(var(--maincol));
+}
+
+.info__lower-progress-medals .info__lower-progress-bar {
+    background: url("../img/progress-bars/medals-backdrop.svg");
+    background-size: cover;
+    background-color: center;
 }
