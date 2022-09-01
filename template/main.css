@@ -190,7 +190,7 @@ body {
     width: 445px;
     max-width: 469px;
     border-radius: 16px;
-    background-color: rgb(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.2);
     height: 571px;
 }
 
