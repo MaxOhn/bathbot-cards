@@ -26,7 +26,7 @@
         <div class="info__upper">
             <div class="info__upper-left">
                 <div class="info__upper-left-pfp">
-                    <img src="{{user_pfp}}">
+                    <div class="pfp"></div>
                     <div class="info__upper-left-pfp-rank">
                         <div class="info__upper-left-pfp-rank-global">
                             <h3>Global</h3>
@@ -110,7 +110,8 @@
 </body>
 <style>
     body {
-        --background: url("{{path}}/{{background_image}}")
+        --background: url("{{path}}/{{background_image}}");
+        --pfp: url("{{user_pfp}}");
     }
 </style>
 

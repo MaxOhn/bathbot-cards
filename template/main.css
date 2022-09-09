@@ -194,8 +194,13 @@ body {
     height: 571px;
 }
 
-.info__upper-left-pfp img {
+.info__upper-left-pfp .pfp {
     width: 100%;
+    aspect-ratio: 1/1;
+    background: var(--pfp) #0005;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
     border-radius: 16px;
 }
 
