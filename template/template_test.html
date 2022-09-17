@@ -26,7 +26,15 @@
         <div class="info__upper">
             <div class="info__upper-left">
                 <div class="info__upper-left-pfp">
-                    <div class="pfp"></div>
+                    <div class="pfp">
+                        <!-- 1:1 placeholder to expand box. might not work with tall pfps but wide ones will fit fine
+                             already know of a fix for tall just cant be arsed to implement. let me know if it becomes an issue
+                             - tanza -->
+                        <img class="pfp1x1-expander" src="https://a.ppy.sh/2">
+                        <div class="pfp-inner">
+                            <img src="https://a.ppy.sh/25352">
+                        </div>
+                    </div>
                     <div class="info__upper-left-pfp-rank">
                         <div class="info__upper-left-pfp-rank-global">
                             <h3>Global</h3>
@@ -97,7 +105,6 @@
 <style>
     body {
         --background: url("../img/backgrounds/advanced.png");
-        --pfp: url("https://a.ppy.sh/4293459");
     }
 </style>
 

@@ -26,7 +26,12 @@
         <div class="info__upper">
             <div class="info__upper-left">
                 <div class="info__upper-left-pfp">
-                    <div class="pfp"></div>
+                    <div class="pfp">
+                        <img class="pfp1x1-expander" src="https://a.ppy.sh/2">
+                        <div class="pfp-inner">
+                            <img src="{{user_pfp}}">
+                        </div>
+                    </div>
                     <div class="info__upper-left-pfp-rank">
                         <div class="info__upper-left-pfp-rank-global">
                             <h3>Global</h3>
@@ -111,7 +116,6 @@
 <style>
     body {
         --background: url("{{path}}/{{background_image}}");
-        --pfp: url("{{user_pfp}}");
     }
 </style>
 

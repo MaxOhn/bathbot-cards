@@ -196,12 +196,30 @@ body {
 
 .info__upper-left-pfp .pfp {
     width: 100%;
-    aspect-ratio: 1/1;
-    background: var(--pfp) #0005;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
     border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+}
+
+.pfp1x1-expander {
+    width: 100%;
+    height: auto;
+    opacity: 0;
+}
+
+.pfp-inner {
+    position: absolute;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+.pfp-inner img {
+    width: 100%;
 }
 
 .info__upper-left-pfp-rank {
